@@ -1,0 +1,6 @@
+framework module Pods_Qiki_KDS {
+  umbrella header "Pods-Qiki KDS-umbrella.h"
+
+  export *
+  module * { export * }
+}
