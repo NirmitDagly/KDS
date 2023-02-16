@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "57B3B8BF-14E6-4126-8DCF-E3C14B957F29"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "32D2CE48-60F2-44DF-BB48-49818BBC50AC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Qiki KDS/View Controllers/Orders/ActiveOrdersViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "711"
+            endingLineNumber = "711"
+            landmarkName = "getActiveOrders()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "32D2CE48-60F2-44DF-BB48-49818BBC50AC - ef8416030dd9f306"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Qiki_KDS.ActiveOrdersViewController.getActiveOrders() -&gt; ()"
+                  moduleName = "Qiki KDS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nirmit/Desktop/KDS%20Details/Qiki%20KDS/Qiki%20KDS/View%20Controllers/Orders/ActiveOrdersViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "711"
+                  endingLineNumber = "711"
+                  offsetFromSymbolStart = "252">
+               </Location>
+               <Location
+                  uuid = "32D2CE48-60F2-44DF-BB48-49818BBC50AC - 65cc509c6f34a531"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Qiki_KDS.GetOrdersResponse, Swift.Error&gt;) -&gt; () in Qiki_KDS.ActiveOrdersViewController.getActiveOrders() -&gt; ()"
+                  moduleName = "Qiki KDS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nirmit/Desktop/KDS%20Details/Qiki%20KDS/Qiki%20KDS/View%20Controllers/Orders/ActiveOrdersViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "713"
+                  endingLineNumber = "713"
+                  offsetFromSymbolStart = "288">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "54DFBE64-E044-4B07-AB60-3DE776E34757"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Qiki KDS/View Controllers/Orders/ActiveOrdersViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "713"
+            endingLineNumber = "713"
+            landmarkName = "getActiveOrders()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C2D8C81D-150D-491D-AFCB-9A506E2C398F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Qiki KDS/View Controllers/Orders/ActiveOrdersViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "721"
+            endingLineNumber = "721"
+            landmarkName = "getActiveOrders()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
