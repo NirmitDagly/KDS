@@ -220,12 +220,12 @@ class HistoryOrdersViewController: UIViewController, UICollectionViewDelegate, U
                             }
                         }
                             
-                        if UserDefaults.selectedDocketSections != nil && UserDefaults.selectedDocketSections!.contains("Terminal") {
-                                //Don't remove any products from order, as the Section is selected as 'Terminal'. Hence, all items will be displayed here...
-                        }
-                        else {
+//                        if UserDefaults.selectedDocketSections != nil && UserDefaults.selectedDocketSections!.contains("Terminal") {
+//                                //Don't remove any products from order, as the Section is selected as 'Terminal'. Hence, all items will be displayed here...
+//                        }
+//                        else {
                             self.filterOrdersToDisplay()
-                        }
+//                        }
                     }
                     self.pastOrderView.reloadData()
             }

@@ -9,6 +9,7 @@ import Foundation
 
 struct CommonService {
     static let shared = CommonService()
+    var baseURL: String {UserDefaults.token?.qikiSite ?? ""}
     
     //MARK: This function is called to register device token on server.
     func registerDevice(username: String, deviceToken: String, completion: @escaping (Result<GetDeviceRegistrationResponse, Error>) -> ()) {

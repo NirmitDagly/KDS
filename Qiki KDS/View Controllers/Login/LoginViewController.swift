@@ -39,8 +39,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
             AppUtility.lockOrientation(.landscape)
         }
         
-        txtUserName.text = "hospitality"
-        txtPassword.text = "rasmuslerdorf"
+//        txtUserName.text = "hospitality"
+//        txtPassword.text = "rasmuslerdorf"
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -71,8 +71,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
             loginDetailsImageView.image = UIImage.init(systemName: "checkmark.circle.fill")!
         }
         else {
-//            txtUserName.text = ""
-//            txtPassword.text = ""
+            txtUserName.text = ""
+            txtPassword.text = ""
             
             loginDetailsImageView.image = UIImage.init(systemName: "circle")!
         }

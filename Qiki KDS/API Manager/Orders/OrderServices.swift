@@ -9,7 +9,8 @@ import Foundation
 
 struct OrderServices {
     static let shared = OrderServices()
-    
+    var baseURL: String {UserDefaults.token?.qikiSite ?? ""}
+
     func getActiveOrders(orderStatus: String, completion: @escaping (Result<GetOrdersResponse, Error>) -> ()) {
         let apiRequest = ApiRequest(url: "\(baseURL)/get_kds_orders",
                                     params: ["orderStatus" : orderStatus,
@@ -108,10 +109,11 @@ struct OrderServices {
         }
     }
     
-    func markItemAsDelivered(forOrderNumber orderNo: Int, andSequenceNo seqNo: Int, forAddedProductID addedProductID: Int, andIsDelivered isDelivered: Int, completion: @escaping(Result<GeneralResponse, Error>) -> ()) {
+    func markItemAsDelivered(forOrderNumber orderNo: Int, andSequenceNo seqNo: Int, forAddedProductID addedProductID: Int, andHasSection section: String, andIsDelivered isDelivered: Int, completion: @escaping(Result<GeneralResponse, Error>) -> ()) {
         let apiRequest = ApiRequest(url: "\(baseURL)/mark_individual_item_delivered",
                                     params: ["id_order": orderNo,
                                              "added_product_id": addedProductID,
+                                             "section": section,
                                              "seq_no": seqNo,
                                              "is_delivered": isDelivered,
                                              "device_uuid": deviceUUID,

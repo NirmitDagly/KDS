@@ -264,7 +264,7 @@ class ActiveOrdersViewController: UIViewController, UICollectionViewDelegate, UI
         }
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductCell
-            cell.lblProduct.text = productsAndDetails(product: orders[tableView.tag].products[indexPath.row]).string
+            cell.lblProduct.attributedText = productsAndDetails(product: orders[tableView.tag].products[indexPath.row])
             
             if orders[tableView.tag].products[indexPath.row].isDeleted == 1 {
                 cell.imgCheckmark.isHidden = true
@@ -291,7 +291,7 @@ class ActiveOrdersViewController: UIViewController, UICollectionViewDelegate, UI
             if orders[tableView.tag].products[indexPath.row].isDelivered ?? 0 == 1 {
                 orders[tableView.tag].products[indexPath.row].isDelivered = 0
                 if Helper.isNetworkReachable() {
-                    markIndividualItemAsDelivered(forOrderNo: orders[tableView.tag].orderNo, andSequenceNo: orders[tableView.tag].sequenceNo, andAddedProductID: orders[tableView.tag].products[indexPath.row].addedProductID!, andIsDelivered: 0)
+                    markIndividualItemAsDelivered(forOrderNo: orders[tableView.tag].orderNo, andSequenceNo: orders[tableView.tag].sequenceNo, andAddedProductID: orders[tableView.tag].products[indexPath.row].addedProductID!, andSection: orders[tableView.tag].products[indexPath.row].docketType[0], andIsDelivered: 0)
                 }
                 else {
                     Helper.presentInternetError(viewController: self)
@@ -300,7 +300,7 @@ class ActiveOrdersViewController: UIViewController, UICollectionViewDelegate, UI
             else {
                 orders[tableView.tag].products[indexPath.row].isDelivered = 1
                 if Helper.isNetworkReachable() {
-                    markIndividualItemAsDelivered(forOrderNo: orders[tableView.tag].orderNo, andSequenceNo: orders[tableView.tag].sequenceNo, andAddedProductID: orders[tableView.tag].products[indexPath.row].addedProductID!, andIsDelivered: 1)
+                    markIndividualItemAsDelivered(forOrderNo: orders[tableView.tag].orderNo, andSequenceNo: orders[tableView.tag].sequenceNo, andAddedProductID: orders[tableView.tag].products[indexPath.row].addedProductID!, andSection: orders[tableView.tag].products[indexPath.row].docketType[0], andIsDelivered: 1)
                 }
                 else {
                     Helper.presentInternetError(viewController: self)
@@ -732,12 +732,12 @@ class ActiveOrdersViewController: UIViewController, UICollectionViewDelegate, UI
                             }
                         }
                         
-                        if UserDefaults.selectedDocketSections != nil && UserDefaults.selectedDocketSections!.contains("Terminal") {
-                            //Don't remove any products from order, as the Section is selected as 'Terminal'. Hence, all items will be displayed here...
-                        }
-                        else {
+//                        if UserDefaults.selectedDocketSections != nil && UserDefaults.selectedDocketSections!.contains("Terminal") {
+//                            //Don't remove any products from order, as the Section is selected as 'Terminal'. Hence, all items will be displayed here...
+//                        }
+//                        else {
                             self.filterOrdersToDisplay()
-                        }
+//                        }
                         self.productSummary = self.combineProductsForSummaryDisplay()
 
                         self.btnProductSummary.isEnabled = true
@@ -786,7 +786,24 @@ class ActiveOrdersViewController: UIViewController, UICollectionViewDelegate, UI
             }
             
             if productsOfOrder.count > 0 {
-                self.orders[i].products = productsOfOrder
+                var shouldDeleteAllProducts = false
+                
+                for j in 0 ..< productsOfOrder.count {
+                    if productsOfOrder[j].isDeleted == 0 {
+                        shouldDeleteAllProducts = false
+                        break
+                    }
+                    else {
+                        shouldDeleteAllProducts = true
+                    }
+                }
+                
+                if shouldDeleteAllProducts == false {
+                    self.orders[i].products = productsOfOrder
+                }
+                else {
+                    self.orders[i].products = [Product]()
+                }
             }
             else {
                 self.orders[i].products = [Product]()
@@ -862,8 +879,8 @@ class ActiveOrdersViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     //MARK: To mark individual item as delivered.
-    func markIndividualItemAsDelivered(forOrderNo orderNo: Int, andSequenceNo seqNo: Int, andAddedProductID addedProductID: Int, andIsDelivered isDelivered: Int) {
-        OrderServices.shared.markItemAsDelivered(forOrderNumber: orderNo, andSequenceNo: seqNo, forAddedProductID: addedProductID, andIsDelivered: isDelivered) { result in
+    func markIndividualItemAsDelivered(forOrderNo orderNo: Int, andSequenceNo seqNo: Int, andAddedProductID addedProductID: Int, andSection section: String, andIsDelivered isDelivered: Int) {
+        OrderServices.shared.markItemAsDelivered(forOrderNumber: orderNo, andSequenceNo: seqNo, forAddedProductID: addedProductID, andHasSection: section, andIsDelivered: isDelivered) { result in
             switch result {
                 case .failure(let error):
                     print("Failed to mark item id: \(addedProductID) for Order: \(orderNo) as delivered...")

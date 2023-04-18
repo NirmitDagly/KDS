@@ -9,7 +9,7 @@ import Foundation
 
 struct LoginService {
     static let shared = LoginService()
-    
+
     func login(username: String, password: String, appVersion: String, completion: @escaping (Result<LoginResponse, Error>) -> ()) {
         Logs.writeLog(onDate: Helper.getCurrentDateAndTime(), andDescription: "Login API called.")
         
