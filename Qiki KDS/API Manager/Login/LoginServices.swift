@@ -40,7 +40,7 @@ struct LoginService {
                                     params: ["app_version" : appVersion,
                                              "api_key" : UserDefaults.token?.apiKey ?? "",
                                              "device_uuid": deviceUUID,
-                                             "is_temrinal_app" : 1],
+                                             "is_temrinal_app" : 0],
                                     method: .post)
         WebService.shared.request(request: apiRequest) { (result: Result<UpdateAppVersionResponse, Error>) in
             switch result {

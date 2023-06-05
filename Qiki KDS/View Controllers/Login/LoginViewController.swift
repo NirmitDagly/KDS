@@ -331,7 +331,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                         Helper.loadingSpinner(isLoading: false, isUserInteractionEnabled: true, withMessage: "")
                         Helper.presentAlert(viewController: self, title: "Something Went Wrong (Error code: \(Helper.errorForAPI(APIErrorCode.getDocketSection)))", message: error.localizedDescription)
                     case .success(let resp):
-                        docketSections = resp.dockets
+                        for i in 0 ..< resp.dockets.count {
+                            docketSections.append(resp.dockets[i].docket)
+                        }
                         
                         if UserDefaults.selectedDocketSections != nil && UserDefaults.selectedDocketSections!.count > 0 {
                             for i in 0 ..< UserDefaults.selectedDocketSections!.count {

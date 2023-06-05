@@ -95,3 +95,5 @@ var docketSections = [String]()
 var selectedSections = [String]()
 
 var activeOrdersTimer: Timer?
+
+var docketSectionOptions = [DocketOptions]()

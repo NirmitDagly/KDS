@@ -15,7 +15,8 @@ struct OrderServices {
         let apiRequest = ApiRequest(url: "\(baseURL)/get_kds_orders",
                                     params: ["orderStatus" : orderStatus,
                                              "device_uuid": deviceUUID,
-                                             "device_name": deviceName],
+                                             "device_name": deviceName,
+                                             "dockets": selectedSections],
                                     method: .post)
         Logs.writeLog(onDate: Helper.getCurrentDateAndTime(), andDescription: "Get Active Orders API called with \(apiRequest).")
         

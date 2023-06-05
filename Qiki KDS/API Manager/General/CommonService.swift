@@ -53,7 +53,7 @@ struct CommonService {
         
         let apiRequest = ApiRequest(url: "\(baseURL)/get_dockets",
                                     params: ["device_uuid": deviceUUID,
-                                                "device_name": deviceName], method: .post)
+                                             "device_name": deviceName], method: .post)
         WebService.shared.request(request: apiRequest) { (result: Result<GetDocketResponse, Error>) in
             switch result {
                 case .failure(let err):
