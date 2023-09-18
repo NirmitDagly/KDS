@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KI5-Bz-uJY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KI5-Bz-uJY">
     <device id="ipad12_9" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -700,22 +700,22 @@ Once it is done, logout and log back in to the app to see the sections here. </s
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dine In" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LpC-JP-QH9">
-                                                            <rect key="frame" x="10" y="0.0" width="100" height="30"/>
+                                                            <rect key="frame" x="10" y="0.0" width="140" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="WHL-Mm-lda"/>
-                                                                <constraint firstAttribute="width" constant="100" id="hLe-PU-bNP"/>
+                                                                <constraint firstAttribute="width" constant="140" id="hLe-PU-bNP"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Table #: Outside 70-3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qy9-ab-6Iv">
-                                                            <rect key="frame" x="110" y="0.0" width="200" height="30"/>
+                                                            <rect key="frame" x="150" y="0.0" width="160" height="30"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="200" id="Y2h-b2-8Xc"/>
+                                                                <constraint firstAttribute="width" constant="160" id="Y2h-b2-8Xc"/>
                                                                 <constraint firstAttribute="height" constant="30" id="aXf-U4-4hI"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -963,6 +963,58 @@ You can select desired sections from 'Settings -&gt; Docket Sections'.</string>
                                     <outlet property="delegate" destination="dfm-Oy-zxO" id="8AF-lv-2Ae"/>
                                 </connections>
                             </navigationBar>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAm-cZ-IYq">
+                                <rect key="frame" x="0.0" y="74" width="300" height="940"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="f86-HF-D8P"/>
+                                </constraints>
+                                <color key="separatorColor" red="0.2901960784" green="0.32549019610000002" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SummaryCell" id="QjG-BD-YbJ" customClass="SummaryCell" customModule="Qiki_KDS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="300" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QjG-BD-YbJ" id="MeH-JS-7hP">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYh-L8-Yxi">
+                                                    <rect key="frame" x="10" y="5" width="245" height="40"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.triangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="HyN-Ee-IgQ">
+                                                    <rect key="frame" x="265" y="12.5" width="25" height="25"/>
+                                                    <color key="tintColor" name="QikiColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="Ukt-GV-4NQ"/>
+                                                        <constraint firstAttribute="height" constant="27" id="yvC-uQ-YlG"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HyN-Ee-IgQ" firstAttribute="leading" secondItem="nYh-L8-Yxi" secondAttribute="trailing" constant="10" id="Ae3-yo-nQs"/>
+                                                <constraint firstItem="HyN-Ee-IgQ" firstAttribute="top" secondItem="MeH-JS-7hP" secondAttribute="top" constant="11.5" id="RuX-g0-OaX"/>
+                                                <constraint firstAttribute="bottom" secondItem="nYh-L8-Yxi" secondAttribute="bottom" constant="5" id="ex9-XE-bSp"/>
+                                                <constraint firstAttribute="trailing" secondItem="HyN-Ee-IgQ" secondAttribute="trailing" constant="10" id="hA5-Nr-3AT"/>
+                                                <constraint firstItem="nYh-L8-Yxi" firstAttribute="top" secondItem="MeH-JS-7hP" secondAttribute="top" constant="5" id="qbM-SL-sD5"/>
+                                                <constraint firstItem="nYh-L8-Yxi" firstAttribute="leading" secondItem="MeH-JS-7hP" secondAttribute="leading" constant="10" id="waJ-0X-73p"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgNotificationWidthConstraint" destination="Ukt-GV-4NQ" id="WbG-Zb-ziD"/>
+                                            <outlet property="lblNotification" destination="HyN-Ee-IgQ" id="fOq-rj-A3e"/>
+                                            <outlet property="lblProductSummary" destination="nYh-L8-Yxi" id="hOn-HY-heh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="dfm-Oy-zxO" id="jzy-Bb-kpY"/>
+                                    <outlet property="delegate" destination="dfm-Oy-zxO" id="qyZ-al-8K6"/>
+                                </connections>
+                            </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xSa-hC-G0Q">
                                 <rect key="frame" x="5" y="74" width="1356" height="940"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -984,22 +1036,22 @@ You can select desired sections from 'Settings -&gt; Docket Sections'.</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dine In" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c24-sZ-PLE">
-                                                            <rect key="frame" x="10" y="0.0" width="100" height="30"/>
+                                                            <rect key="frame" x="10" y="0.0" width="140" height="30"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="100" id="WKp-sd-osU"/>
+                                                                <constraint firstAttribute="width" constant="140" id="WKp-sd-osU"/>
                                                                 <constraint firstAttribute="height" constant="30" id="ye7-uF-hXI"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Table #: Outside 70-3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgB-NB-cWN">
-                                                            <rect key="frame" x="110" y="0.0" width="200" height="30"/>
+                                                            <rect key="frame" x="150" y="0.0" width="160" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="34Y-D5-qB0"/>
-                                                                <constraint firstAttribute="width" constant="200" id="qGO-5q-ggf"/>
+                                                                <constraint firstAttribute="width" constant="160" id="qGO-5q-ggf"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1156,58 +1208,6 @@ You can select desired sections from 'Settings -&gt; Docket Sections'.</string>
                                     <outlet property="delegate" destination="dfm-Oy-zxO" id="3sK-ea-hr1"/>
                                 </connections>
                             </collectionView>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAm-cZ-IYq">
-                                <rect key="frame" x="0.0" y="74" width="300" height="940"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="f86-HF-D8P"/>
-                                </constraints>
-                                <color key="separatorColor" red="0.2901960784" green="0.32549019610000002" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SummaryCell" id="QjG-BD-YbJ" customClass="SummaryCell" customModule="Qiki_KDS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="300" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QjG-BD-YbJ" id="MeH-JS-7hP">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYh-L8-Yxi">
-                                                    <rect key="frame" x="10" y="5" width="245" height="40"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.triangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="HyN-Ee-IgQ">
-                                                    <rect key="frame" x="265" y="12.5" width="25" height="25"/>
-                                                    <color key="tintColor" name="QikiColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="25" id="Ukt-GV-4NQ"/>
-                                                        <constraint firstAttribute="height" constant="27" id="yvC-uQ-YlG"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="HyN-Ee-IgQ" firstAttribute="leading" secondItem="nYh-L8-Yxi" secondAttribute="trailing" constant="10" id="Ae3-yo-nQs"/>
-                                                <constraint firstItem="HyN-Ee-IgQ" firstAttribute="top" secondItem="MeH-JS-7hP" secondAttribute="top" constant="11.5" id="RuX-g0-OaX"/>
-                                                <constraint firstAttribute="bottom" secondItem="nYh-L8-Yxi" secondAttribute="bottom" constant="5" id="ex9-XE-bSp"/>
-                                                <constraint firstAttribute="trailing" secondItem="HyN-Ee-IgQ" secondAttribute="trailing" constant="10" id="hA5-Nr-3AT"/>
-                                                <constraint firstItem="nYh-L8-Yxi" firstAttribute="top" secondItem="MeH-JS-7hP" secondAttribute="top" constant="5" id="qbM-SL-sD5"/>
-                                                <constraint firstItem="nYh-L8-Yxi" firstAttribute="leading" secondItem="MeH-JS-7hP" secondAttribute="leading" constant="10" id="waJ-0X-73p"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="imgNotificationWidthConstraint" destination="Ukt-GV-4NQ" id="WbG-Zb-ziD"/>
-                                            <outlet property="lblNotification" destination="HyN-Ee-IgQ" id="fOq-rj-A3e"/>
-                                            <outlet property="lblProductSummary" destination="nYh-L8-Yxi" id="hOn-HY-heh"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <sections/>
-                                <connections>
-                                    <outlet property="dataSource" destination="dfm-Oy-zxO" id="jzy-Bb-kpY"/>
-                                    <outlet property="delegate" destination="dfm-Oy-zxO" id="qyZ-al-8K6"/>
-                                </connections>
-                            </tableView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxv-Ip-m9M">
                                 <rect key="frame" x="433" y="437" width="500" height="150"/>
                                 <constraints>

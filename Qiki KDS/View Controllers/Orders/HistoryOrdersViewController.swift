@@ -145,6 +145,16 @@ class HistoryOrdersViewController: UIViewController, UICollectionViewDelegate, U
                 else {
                     cell.lblOrderMethod.text = "\(customerName)"
                 }
+                
+                if orders[indexPath.row].deliveryType == DeliveryType.pickup {
+                    if orders[indexPath.row].orderOrigin != DeviceIdentification.online.rawValue {
+                        cell.lblOrderType.text = cell.lblOrderType.text! + ": ASAP"
+                    }
+                    else {
+                        let pickuptime = orders[indexPath.row].pickupTime?.toDate(by: "h:mm a") ?? ""
+                        cell.lblOrderType.text = cell.lblOrderType.text! + ": \(pickuptime)"
+                    }
+                }
             case .dineIn:
                 cell.lblOrderMethod.text = "Table #: " + orders[indexPath.row].tableNo!
                 

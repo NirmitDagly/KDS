@@ -358,3 +358,18 @@ extension UIFont {
         }
     }
 }
+
+extension Int {
+    func toDate(by format: String = "dd/MM/yyyy") -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        dateFormatter.locale = Locale(identifier: "en_AU")
+        dateFormatter.timeZone = TimeZone(abbreviation: "Australia/Sydney")
+        dateFormatter.amSymbol = "AM"
+        dateFormatter.pmSymbol = "PM"
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        let date = Date(timeIntervalSince1970: TimeInterval(self))
+        return dateFormatter.string(from: date)
+    }
+
+}

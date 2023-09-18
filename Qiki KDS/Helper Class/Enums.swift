@@ -64,6 +64,7 @@ enum DeviceIdentification: Int {
     case iPad = 2
     case iPhone = 3
     case android = 4
+    case DDS = 5
 }
 
 enum RequestStatus: Int {

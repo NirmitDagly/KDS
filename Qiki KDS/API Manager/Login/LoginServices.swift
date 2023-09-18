@@ -18,7 +18,8 @@ struct LoginService {
                                              "password" : password,
                                              "app_version": appVersion,
                                              "device_uuid": deviceUUID,
-                                             "device_name": deviceName],
+                                             "device_name": deviceName,
+                                             "app_identification": DeviceIdentification.DDS.rawValue],
                                     method: .post)
         WebService.shared.request(request: apiRequest) { (result: Result<LoginResponse, Error>) in
             switch result {

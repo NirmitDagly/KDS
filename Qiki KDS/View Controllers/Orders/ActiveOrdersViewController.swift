@@ -327,6 +327,16 @@ class ActiveOrdersViewController: UIViewController, UICollectionViewDelegate, UI
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActiveOrderCell", for: indexPath) as! ActiveOrderCell
         cell.lblOrderType.text = orders[indexPath.row].deliveryType.rawValue
         
+        if orders[indexPath.row].deliveryType == DeliveryType.pickup {
+            if orders[indexPath.row].orderOrigin != DeviceIdentification.online.rawValue {
+                cell.lblOrderType.text = cell.lblOrderType.text! + ": ASAP"
+            }
+            else {
+                let pickuptime = orders[indexPath.row].pickupTime?.toDate(by: "h:mm a") ?? ""
+                cell.lblOrderType.text = cell.lblOrderType.text! + ": \(pickuptime)"
+            }
+        }
+        
         switch orders[indexPath.row].deliveryType {
             case .pickup:
                 let customerName = orders[indexPath.row].customerName.replacingOccurrences(of: " Customer", with: "")

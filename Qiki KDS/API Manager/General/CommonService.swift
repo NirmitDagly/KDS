@@ -23,7 +23,8 @@ struct CommonService {
                                                 "device_model": deviceModel,
                                                 "device_os": deviceSystemVersion,
                                                 "app_version": versionNumber!,
-                                                "app_build": buildNumber!],
+                                                "app_build": buildNumber!,
+                                                "app_identification": DeviceIdentification.DDS.rawValue],
                                     method: .post)
         WebService.shared.request(request: apiRequest, completion: completion)
     }
