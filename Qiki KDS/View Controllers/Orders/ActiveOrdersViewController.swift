@@ -419,7 +419,12 @@ class ActiveOrdersViewController: UIViewController, UICollectionViewDelegate, UI
             
             if timeDetails["isExceededTime"] as! Bool == true && (orders[indexPath.row].isUrgent == 0) {
                 cell.orderOverView.backgroundColor = .red
-                cell.lblOrderType.textColor = .white
+                if orders[indexPath.row].deliveryType == DeliveryType.pickup {
+                    cell.lblOrderType.textColor = .yellow
+                }
+                else {
+                    cell.lblOrderType.textColor = .white
+                }
                 cell.lblOrderMethod.textColor = .white
                 cell.lblOrderNumber.textColor = .white
                 cell.lblTimer.textColor = .white
@@ -428,7 +433,12 @@ class ActiveOrdersViewController: UIViewController, UICollectionViewDelegate, UI
             }
             else if orders[indexPath.row].isUrgent == 1 {
                 cell.orderOverView.backgroundColor = .red
-                cell.lblOrderType.textColor = .white
+                if orders[indexPath.row].deliveryType == DeliveryType.pickup {
+                    cell.lblOrderType.textColor = .yellow
+                }
+                else {
+                    cell.lblOrderType.textColor = .white
+                }
                 cell.lblOrderMethod.textColor = .white
                 cell.lblOrderNumber.textColor = .white
                 cell.lblTimer.textColor = .white
@@ -437,7 +447,12 @@ class ActiveOrdersViewController: UIViewController, UICollectionViewDelegate, UI
             }
             else {
                 cell.orderOverView.backgroundColor = .qikiGreen
-                cell.lblOrderType.textColor = .black
+                if orders[indexPath.row].deliveryType == DeliveryType.pickup {
+                    cell.lblOrderType.textColor = .blue
+                }
+                else {
+                    cell.lblOrderType.textColor = .black
+                }
                 cell.lblOrderMethod.textColor = .black
                 cell.lblOrderNumber.textColor = .black
                 cell.lblTimer.textColor = .black

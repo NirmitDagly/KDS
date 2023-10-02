@@ -222,6 +222,19 @@
                                     <outlet property="delegate" destination="p0e-16-CUT" id="Xg3-cL-Dqu"/>
                                 </connections>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHO-7P-wW7">
+                                <rect key="frame" x="433" y="944" width="500" height="70"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="RIm-AT-naS"/>
+                                    <constraint firstAttribute="width" constant="500" id="aBd-fa-yss"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="For 24x7 Support, call on 1300 642 633">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="24"/>
+                                    <color key="baseForegroundColor" name="QikiColor"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WLa-C3-xaN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -230,7 +243,9 @@
                             <constraint firstItem="oOh-IE-4xP" firstAttribute="height" secondItem="zOQ-iy-SZz" secondAttribute="height" id="dBw-gV-t5i"/>
                             <constraint firstItem="oOh-IE-4xP" firstAttribute="top" secondItem="zOQ-iy-SZz" secondAttribute="top" id="dtY-IA-98z"/>
                             <constraint firstAttribute="trailing" secondItem="oOh-IE-4xP" secondAttribute="trailing" id="idE-Q0-Jh2"/>
+                            <constraint firstItem="WLa-C3-xaN" firstAttribute="bottom" secondItem="xHO-7P-wW7" secondAttribute="bottom" constant="10" id="lJz-6s-oma"/>
                             <constraint firstAttribute="bottom" secondItem="oOh-IE-4xP" secondAttribute="bottom" id="nf2-FO-F84"/>
+                            <constraint firstItem="xHO-7P-wW7" firstAttribute="centerX" secondItem="zOQ-iy-SZz" secondAttribute="centerX" id="xSe-RG-Czz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HyJ-b5-5t3"/>
@@ -1260,7 +1275,7 @@ You can select desired sections from 'Settings -&gt; Docket Sections'.</string>
         <image name="QikiLogo" width="2604" height="1100"/>
         <image name="checkmark.circle" catalog="system" width="128" height="123"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
-        <image name="circle" catalog="system" width="128" height="123"/>
+        <image name="circle" catalog="system" width="32" height="32"/>
         <image name="doc.circle.fill" catalog="system" width="128" height="123"/>
         <image name="doc.text.fill" catalog="system" width="115" height="128"/>
         <image name="exclamationmark.triangle" catalog="system" width="128" height="109"/>
