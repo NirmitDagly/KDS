@@ -418,7 +418,7 @@ class Helper {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy hh:mm a"
         formatter.timeZone = .current
-        formatter.locale = .current
+        formatter.locale = Locale(identifier: "en_US_POSIX")
         let currentDateTime = formatter.string(from: currentDate)
         
         var closingDateTime = ""
@@ -438,7 +438,7 @@ class Helper {
             }
             
             let dateFormatter = DateFormatter()
-            dateFormatter.locale = .current
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
             dateFormatter.timeZone = .current
             dateFormatter.dateFormat = "dd/MM/yyyy"
             dateFormatter.amSymbol = "AM"
@@ -572,6 +572,7 @@ class Helper {
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy H:mm:ss"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         let current_date_time = dateFormatter.string(from: date)
         print("before add time-->",current_date_time)
         
@@ -583,12 +584,14 @@ class Helper {
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy H:mm:ss"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         let current_date_time = dateFormatter.string(from: date)
         print("before add time-->",current_date_time)
         
         //adding 5 miniuts
         let addminutes = date.addingTimeInterval(5*60)
         dateFormatter.dateFormat = "dd/MM/yyyy H:mm:ss"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         let after_add_time = dateFormatter.string(from: addminutes)
         print("after add time-->",after_add_time)
         
@@ -724,7 +727,7 @@ class Helper {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy hh:mm a"
         formatter.timeZone = .current
-        formatter.locale = .current
+        formatter.locale = Locale(identifier: "en_US_POSIX")
         let currentDateTime = formatter.string(from: currentDate)
             
         Logs.writeLog(onDate: Helper.getCurrentDateAndTime(), andDescription: "Calculated current time is: \(currentDateTime)")
@@ -746,7 +749,7 @@ class Helper {
             }
             
             let dateFormatter = DateFormatter()
-            dateFormatter.locale = .current
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
             dateFormatter.timeZone = .current
             dateFormatter.dateFormat = "dd/MM/yyyy"
             dateFormatter.amSymbol = "AM"
@@ -807,7 +810,7 @@ class Helper {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         formatter.timeZone = .current
-        formatter.locale = .current
+        formatter.locale = Locale(identifier: "en_US_POSIX")
         let currentDateTime = formatter.string(from: currentDate)
         
         var openingDateTime = ""
@@ -831,7 +834,7 @@ class Helper {
             }
             
             let dateFormatter = DateFormatter()
-            dateFormatter.locale = .current
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX")
             dateFormatter.timeZone = .current
             dateFormatter.dateFormat = "dd/MM/yyyy"
             dateFormatter.amSymbol = "AM"

@@ -197,7 +197,7 @@ extension String {
     func convertToNextDate(date: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
-        dateFormatter.locale = .current
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone = .current
         dateFormatter.amSymbol = "AM"
         dateFormatter.pmSymbol = "PM"
@@ -211,7 +211,7 @@ extension String {
     func convertToYesterdaysDate(date: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
-        dateFormatter.locale = .current
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone = .current
         dateFormatter.amSymbol = "AM"
         dateFormatter.pmSymbol = "PM"
@@ -236,7 +236,7 @@ extension String {
     
     func compareTime(closingHours: String) -> Bool {
         let formatter = DateFormatter()
-        formatter.locale = .current
+        formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.dateFormat = "hh:mm a"
         formatter.amSymbol = "AM"
         formatter.pmSymbol = "PM"
@@ -260,8 +260,8 @@ extension String {
         let dateFormatter: DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy hh:mm a"
         dateFormatter.timeZone = .current
-        dateFormatter.locale = Locale(identifier: "en_AU")
-        dateFormatter.timeZone = TimeZone(abbreviation: "Australia/Sydney")
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.timeZone = TimeZone(abbreviation: "Australia/Melbourne")
 
         let date = Date()
         let date1: Date = dateFormatter.date(from: currentDate)!
@@ -278,8 +278,8 @@ extension String {
         let df: DateFormatter = DateFormatter()
         df.dateFormat = "dd/MM/yyyy"
         dateFormatter.timeZone = .current
-        dateFormatter.locale = Locale(identifier: "en_AU")
-        dateFormatter.timeZone = TimeZone(abbreviation: "Australia/Sydney")
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.timeZone = TimeZone(abbreviation: "Australia/Melbourne")
 
         let currentDateOnly = Date()
         let currentDateWithFormat = df.string(from: currentDateOnly)
@@ -363,8 +363,8 @@ extension Int {
     func toDate(by format: String = "dd/MM/yyyy") -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
-        dateFormatter.locale = Locale(identifier: "en_AU")
-        dateFormatter.timeZone = TimeZone(abbreviation: "Australia/Sydney")
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.timeZone = TimeZone(abbreviation: "Australia/Melbourne")
         dateFormatter.amSymbol = "AM"
         dateFormatter.pmSymbol = "PM"
         dateFormatter.calendar = Calendar(identifier: .gregorian)

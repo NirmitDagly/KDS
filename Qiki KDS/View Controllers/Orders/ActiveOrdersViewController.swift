@@ -654,10 +654,12 @@ class ActiveOrdersViewController: UIViewController, UICollectionViewDelegate, UI
 
             let dateFormat = DateFormatter()
             dateFormat.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            dateFormat.locale = Locale(identifier: "en_US_POSIX")
             let referenceDateTime = dateFormat.date(from: order.dateAdded!)!
             
             let df = DateFormatter()
             df.dateFormat = "dd/MM/yyyy hh:mm:ss a"
+            df.locale = Locale(identifier: "en_US_POSIX")
             
             let convertedDate = df.string(from: referenceDateTime)
             let convertedDateTime = df.date(from: convertedDate)

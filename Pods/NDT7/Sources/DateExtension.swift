@@ -18,6 +18,7 @@ extension Date {
     static let logDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = logStringDateFormat
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         return dateFormatter
     }()
 
