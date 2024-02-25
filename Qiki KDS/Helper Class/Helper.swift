@@ -419,7 +419,7 @@ class Helper {
         formatter.dateFormat = "dd/MM/yyyy hh:mm a"
         formatter.timeZone = .current
         formatter.locale = Locale(identifier: "en_US_POSIX")
-        let currentDateTime = formatter.string(from: currentDate)
+        let currentDateTime = formatter.string(from: currentDate).lowercased()
         
         var closingDateTime = ""
         if UserDefaults.storeDetails != nil {
@@ -728,7 +728,7 @@ class Helper {
         formatter.dateFormat = "dd/MM/yyyy hh:mm a"
         formatter.timeZone = .current
         formatter.locale = Locale(identifier: "en_US_POSIX")
-        let currentDateTime = formatter.string(from: currentDate)
+        let currentDateTime = formatter.string(from: currentDate).lowercased()
             
         Logs.writeLog(onDate: Helper.getCurrentDateAndTime(), andDescription: "Calculated current time is: \(currentDateTime)")
         
@@ -811,7 +811,7 @@ class Helper {
         formatter.dateFormat = "dd/MM/yyyy"
         formatter.timeZone = .current
         formatter.locale = Locale(identifier: "en_US_POSIX")
-        let currentDateTime = formatter.string(from: currentDate)
+        let currentDateTime = formatter.string(from: currentDate).lowercased()
         
         var openingDateTime = ""
         
