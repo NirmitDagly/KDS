@@ -13,7 +13,7 @@ struct LoginService {
     func login(username: String, password: String, appVersion: String, completion: @escaping (Result<LoginResponse, Error>) -> ()) {
         Logs.writeLog(onDate: Helper.getCurrentDateAndTime(), andDescription: "Login API called.")
         
-        let apiRequest = ApiRequest(url: "https://www.services.qiki.com.au/api/auth",
+        let apiRequest = ApiRequest(url: "https://crm.qiki.com.au/Services/Auth",
                                     params: ["username" : username,
                                              "password" : password,
                                              "app_version": appVersion,
@@ -37,7 +37,7 @@ struct LoginService {
     func getBaseURL(appVersion: String, completion: @escaping (Result<UpdateAppVersionResponse, Error>) -> ()) {
         Logs.writeLog(onDate: Helper.getCurrentDateAndTime(), andDescription: "Update Version Number API called.")
         
-        let apiRequest = ApiRequest(url: "https://www.services.qiki.com.au/api/update_app_version",
+        let apiRequest = ApiRequest(url: "https://crm.qiki.com.au/Services/UpdateAppVersion",
                                     params: ["app_version" : appVersion,
                                              "api_key" : UserDefaults.token?.apiKey ?? "",
                                              "device_uuid": deviceUUID,
