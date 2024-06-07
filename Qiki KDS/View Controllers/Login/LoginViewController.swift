@@ -210,63 +210,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                         UserDefaults.deviceID = resp.deviceID
                         deviceID = resp.deviceID
                         posID = (UserDefaults.token?.username ?? "Admin") + String(UserDefaults.deviceID)
-                        self.updateAppVersion()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            self.getStoreDetails()
+                        }
                 }
             }
         }
         else {
             Logs.writeLog(onDate: Helper.getCurrentDateAndTime(), andDescription: "Device is not connected to internet.")
             Helper.loadingSpinner(isLoading: false, isUserInteractionEnabled: false, withMessage: "")
-            Helper.presentInternetError(viewController: self)
-        }
-    }
-    
-    func updateAppVersion() {
-        if UserDefaults.appVersion != nil {
-            if UserDefaults.appVersion != UIApplication.appVersion {
-                checkForAppVersion()
-            }
-            else {
-                UserDefaults.appVersion = UIApplication.appVersion
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    self.getStoreDetails()
-                }
-            }
-        }
-        else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self.getStoreDetails()
-            }
-        }
-    }
-    
-    func checkForAppVersion() {
-        //call API that user has got newer version of app and hence update the base url
-        if Helper.isNetworkReachable() {
-            let updatedVersionNumber = Helper.getAppVersionNumber()
-            LoginService.shared.getBaseURL(appVersion: updatedVersionNumber) { result in
-                switch result {
-                    case .failure(let error):
-                        print("Unable to get base URL")
-                        Logs.writeLog(onDate: Helper.getCurrentDateAndTime(), andDescription: "Failed to update base url for new app version \(error).")
-                        
-                        Helper.loadingSpinner(isLoading: false, isUserInteractionEnabled: true, withMessage: "")
-                        Helper.presentAlert(viewController: self, title: "Something Went Wrong (Error code: \(Helper.errorForAPI(APIErrorCode.updateVersionNumber)))", message: error.localizedDescription)
-                        
-                    case .success(let resp):
-                        print("Successfully updated base URL")
-                        if UserDefaults.token != nil {
-                            UserDefaults.token!.qikiSite = resp.qikiSite
-                        }
-                        
-                        UserDefaults.appVersion = UIApplication.appVersion
-                        Logs.writeLog(onDate: Helper.getCurrentDateAndTime(), andDescription: "Successfully updated base url for new version.")
-                        
-                        self.getStoreDetails()
-                }
-            }
-        }
-        else {
             Helper.presentInternetError(viewController: self)
         }
     }
