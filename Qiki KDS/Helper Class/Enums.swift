@@ -44,18 +44,12 @@ enum Constants {
     }
     
     enum OperationIdentifier {
-        static let saveOrderDetails = "SNOD"
-        static let updateDineInOrder = "UDPO"
-        static let removeProductsFromOrder = "RPFO"
-        static let closeOrderOnDeleteProducts = "CODP"
-        static let saveOrderDetailsOnMakingPayment = "SOPD"
-        static let updateOrderWithPartialPayment = "UOPP"
-        static let closeOrderOnExternalPayment = "COEP"
-        static let markOrderAsOverridePaid = "MOAP"
-        static let swapTables = "SWTA"
-        static let paymentErrorLogs = "PELF"
-        static let markOrderAsCancelled = "MOAC"
-        static let syncOrderUpdates = "SNOU"
+        static let getKDSActiveOrders = "GKAO"
+        static let getKDSHistoryOrders = "GKHO"
+        static let markKDSOrderAsDelivered = "MOAD"
+        static let markItemAsDelivered = "MIAD"
+        static let markOrderAsActive = "MOAA"
+        static let markOrderAsUrgent = "MOAU"
     }
 }
 
