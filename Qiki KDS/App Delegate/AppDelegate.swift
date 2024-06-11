@@ -38,6 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         print("Device UUID is: \(deviceUUID)")
         print("Device Token String is: \(UserDefaults.deviceTokenString)")
         
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            sb = iphoneSb
+        }
+
         //Override point for customization after application launch.
         UIApplication.shared.isIdleTimerDisabled = true
         UNUserNotificationCenter.current().delegate = self
@@ -118,17 +122,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func applicationWillTerminate(_ application: UIApplication) {
     }
-    
-    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            sb = iphoneSb
-            return UIInterfaceOrientationMask.portrait
-        }
-        else {
-            return UIInterfaceOrientationMask.landscape
-        }
-    }
-    
+        
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         deviceTokenString = deviceToken.hexString
         UserDefaults.deviceTokenString = deviceTokenString

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4027C872C12D294002AF5C1 /* iPhoneMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4027C862C12D294002AF5C1 /* iPhoneMain.storyboard */; };
 		E800B2A8295BC53600860A0F /* DDS_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E800B2A7295BC53600860A0F /* DDS_Logo.png */; };
 		E86DEBF7295E6684008DF2BE /* LogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86DEBF6295E6684008DF2BE /* LogService.swift */; };
 		E889B72A293EE8D300AC2AD1 /* OrderServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = E889B729293EE8D300AC2AD1 /* OrderServices.swift */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		03DFDBF7622EBAC95EA23C3A /* Pods-Qiki KDS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qiki KDS.debug.xcconfig"; path = "Target Support Files/Pods-Qiki KDS/Pods-Qiki KDS.debug.xcconfig"; sourceTree = "<group>"; };
 		84936711734204057520E11F /* Pods-Qiki KDS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Qiki KDS.release.xcconfig"; path = "Target Support Files/Pods-Qiki KDS/Pods-Qiki KDS.release.xcconfig"; sourceTree = "<group>"; };
+		C4027C862C12D294002AF5C1 /* iPhoneMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iPhoneMain.storyboard; sourceTree = "<group>"; };
 		C4778F862C1289330027A1A3 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		E800B2A7295BC53600860A0F /* DDS_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DDS_Logo.png; sourceTree = "<group>"; };
 		E828A6152935716300B499F7 /* Qiki KDS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Qiki KDS.entitlements"; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 			children = (
 				E8BB1E1929347DEF00FABBD1 /* LaunchScreen.storyboard */,
 				E8BB1E1B29347E0000FABBD1 /* Main.storyboard */,
+				C4027C862C12D294002AF5C1 /* iPhoneMain.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 			files = (
 				E8BB1E1C29347E0000FABBD1 /* Main.storyboard in Resources */,
 				E8BB1E0729347D3200FABBD1 /* Assets.xcassets in Resources */,
+				C4027C872C12D294002AF5C1 /* iPhoneMain.storyboard in Resources */,
 				E800B2A8295BC53600860A0F /* DDS_Logo.png in Resources */,
 				E8BB1E1A29347DEF00FABBD1 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -659,7 +663,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Qiki KDS/Qiki KDS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4XF5KZD4AY;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)/**";
@@ -674,6 +678,7 @@
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -707,7 +712,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Qiki KDS/Qiki KDS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4XF5KZD4AY;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)/**";
@@ -722,6 +727,7 @@
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

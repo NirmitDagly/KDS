@@ -210,7 +210,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                         UserDefaults.deviceID = resp.deviceID
                         deviceID = resp.deviceID
                         posID = (UserDefaults.token?.username ?? "Admin") + String(UserDefaults.deviceID)
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                             self.getStoreDetails()
                         }
                 }
