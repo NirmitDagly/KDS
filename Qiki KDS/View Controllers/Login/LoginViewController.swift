@@ -257,6 +257,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                             deviceID = resp.deviceID!
                         }
                         
+                        if resp.supportLinks != nil {
+                            UserDefaults.supportLinks = resp.supportLinks!
+                        }
+                        
                         self.getDocketSections()
                     }
                     else if resp.success == 2 && resp.isMainTerminal != nil && resp.isMainTerminal! == 0 {

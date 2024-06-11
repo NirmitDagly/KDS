@@ -26,19 +26,21 @@ class WebViewController: UIViewController, WKNavigationDelegate {
 
         let url: URL!
         
-        if siteToShow == "userguides" {
-            lblNavigationTitle.title =  "User Guide"
-            url = URL(string: "https://www.qiki.com.au/user-guide")!
-        }
-        else if siteToShow == "privacy" {
+        if siteToShow == "privacy" {
             lblNavigationTitle.title = "Privacy Policy"
-            url = URL(string: "https://www.qiki.com.au/content/2-privacy-policy")!
-        }
-        else if siteToShow == "terms" {
+            if UserDefaults.supportLinks != nil {
+                url = URL(string: UserDefaults.supportLinks!.privacyPolicy)!
+            } else {
+                url = URL(string: "https://www.qiki.com.au")
+            }
+        } else if siteToShow == "terms" {
             lblNavigationTitle.title = "Terms and Conditions"
-            url = URL(string: "https://www.qiki.com.au/content/3-terms-and-conditions")!
-        }
-        else {
+            if UserDefaults.supportLinks != nil {
+                url = URL(string: UserDefaults.supportLinks!.termsAndConditions)!
+            } else {
+                url = URL(string: "https://www.qiki.com.au")
+            }
+        } else {
             url = URL(string: "")!
         }
         

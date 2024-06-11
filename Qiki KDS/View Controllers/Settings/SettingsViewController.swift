@@ -53,11 +53,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
-        }
-        else if section == 1 {
-            return 4
-        }
-        else {
+        } else {
             return 3
         }
     }
@@ -91,19 +87,12 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         else if indexPath.section == 1 {
             if indexPath.row == 0 {
                 let imgView = cell.viewWithTag(10) as! UIImageView
-                imgView.image = UIImage.init(systemName: "book.circle.fill")
-                
-                let lblOption = cell.viewWithTag(11) as! UILabel
-                lblOption.text = "User Guide"
-            }
-            else if indexPath.row == 1 {
-                let imgView = cell.viewWithTag(10) as! UIImageView
                 imgView.image = UIImage.init(systemName: "at")
                 
                 let lblOption = cell.viewWithTag(11) as! UILabel
                 lblOption.text = "Contact Us"
             }
-            else if indexPath.row == 2 {
+            else if indexPath.row == 1 {
                 let imgView = cell.viewWithTag(10) as! UIImageView
                 imgView.image = UIImage.init(systemName: "lock.shield.fill")
                 
@@ -155,20 +144,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         }
         else if indexPath.section == 1 {
             if indexPath.row == 0 {
-                if Helper.isNetworkReachable() {
-                    let vc = sb.instantiateViewController(identifier: "WebViewController") as WebViewController
-                    vc.siteToShow = "userguides"
-                    navigationController?.pushViewController(vc, animated: true)
-                }
-                else {
-                    Logs.writeLog(onDate: Helper.getCurrentDateAndTime(), andDescription: "Device is not connected to internet.")
-                    Helper.presentInternetError(viewController: self)
-                }
-            }
-            else if indexPath.row == 1 {
                 Helper.presentAlert(viewController: self, title: "Contact Us", message: "For 24 hour assistance call:\n 1300 642 633.")
             }
-            else if indexPath.row == 2 {
+            else if indexPath.row == 1 {
                 if Helper.isNetworkReachable() {
                     let vc = sb.instantiateViewController(identifier: "WebViewController") as WebViewController
                     vc.siteToShow = "privacy"

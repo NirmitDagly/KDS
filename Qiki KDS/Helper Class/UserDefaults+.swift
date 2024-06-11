@@ -54,6 +54,7 @@ extension UserDefaults {
         static let lastOrderIdentifier = "LastOrderIdentifier"
         static let userLoggedOutAfterHours = "UserLoggedOutAfterHours"
         static let selectedDocketSections = "SelectedDocketSections"
+        static let supportLinks = "SupportLinks"
     }
     
     // MARK: - Static values
@@ -225,6 +226,15 @@ extension UserDefaults {
         }
         set(newValue) {
             UserDefaults.standard.save(customObject: newValue, inKey: Keys.selectedDocketSections)
+        }
+    }
+    
+    static var supportLinks: SupportLinks? {
+        get {
+            return UserDefaults.standard.retrieve(object: SupportLinks.self, fromKey: Keys.supportLinks)
+        }
+        set(newValue) {
+            UserDefaults.standard.save(customObject: newValue, inKey: Keys.supportLinks)
         }
     }
 
