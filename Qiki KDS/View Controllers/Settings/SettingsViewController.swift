@@ -51,7 +51,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
+        if section == 0 || section == 1 {
             return 1
         } else {
             return 3
@@ -76,7 +76,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingOptions", for: indexPath)
-        
+    
         if indexPath.section == 0 {
             let imgView = cell.viewWithTag(10) as! UIImageView
             imgView.image = UIImage.init(systemName: "doc.circle.fill")
@@ -92,20 +92,20 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                 let lblOption = cell.viewWithTag(11) as! UILabel
                 lblOption.text = "Contact Us"
             }
-            else if indexPath.row == 1 {
-                let imgView = cell.viewWithTag(10) as! UIImageView
-                imgView.image = UIImage.init(systemName: "lock.shield.fill")
-                
-                let lblOption = cell.viewWithTag(11) as! UILabel
-                lblOption.text = "Privacy Policy"
-            }
-            else {
-                let imgView = cell.viewWithTag(10) as! UIImageView
-                imgView.image = UIImage.init(systemName: "doc.text.fill")
-                
-                let lblOption = cell.viewWithTag(11) as! UILabel
-                lblOption.text = "Terms and conditions"
-            }
+//            else if indexPath.row == 1 {
+//                let imgView = cell.viewWithTag(10) as! UIImageView
+//                imgView.image = UIImage.init(systemName: "lock.shield.fill")
+//                
+//                let lblOption = cell.viewWithTag(11) as! UILabel
+//                lblOption.text = "Privacy Policy"
+//            }
+//            else {
+//                let imgView = cell.viewWithTag(10) as! UIImageView
+//                imgView.image = UIImage.init(systemName: "doc.text.fill")
+//                
+//                let lblOption = cell.viewWithTag(11) as! UILabel
+//                lblOption.text = "Terms and conditions"
+//            }
         }
         else {
             if indexPath.row == 0 {
