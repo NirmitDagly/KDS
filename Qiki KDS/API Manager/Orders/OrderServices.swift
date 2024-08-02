@@ -25,8 +25,14 @@ struct OrderServices {
         WebService.shared.requestWithJSON(request: apiRequest) { (result: Result<GetOrdersResponse, Error>) in
             switch result {
                 case .failure(let error):
+                    Logs.writeLog(onDate: Helper.getCurrentDateAndTime(),
+                                  andDescription: "\(error)"
+                    )
                     completion(.failure(error))
                 case .success(let resp):
+                    Logs.writeLog(onDate: Helper.getCurrentDateAndTime(),
+                                  andDescription: "\(resp.orders)"
+                    )
                     completion(.success(resp))
             }
         }
@@ -47,8 +53,14 @@ struct OrderServices {
         WebService.shared.requestWithJSON(request: apiRequest) { (result: Result<GetOrdersResponse, Error>) in
             switch result {
                 case .failure(let error):
+                    Logs.writeLog(onDate: Helper.getCurrentDateAndTime(),
+                                  andDescription: "\(error)"
+                    )
                     completion(.failure(error))
                 case .success(let resp):
+                    Logs.writeLog(onDate: Helper.getCurrentDateAndTime(),
+                                  andDescription: "\(resp.orders)"
+                    )
                     completion(.success(resp))
             }
         }
@@ -72,6 +84,9 @@ struct OrderServices {
                 case .failure(let error):
                     completion(.failure(error))
                 case .success(let resp):
+                    Logs.writeLog(onDate: Helper.getCurrentDateAndTime(),
+                                  andDescription: "\(resp)"
+                    )
                     completion(.success(resp))
             }
         }
@@ -94,6 +109,9 @@ struct OrderServices {
                 case .failure(let error):
                     completion(.failure(error))
                 case .success(let resp):
+                    Logs.writeLog(onDate: Helper.getCurrentDateAndTime(),
+                                  andDescription: "\(resp)"
+                    )
                     completion(.success(resp))
             }
         }
@@ -115,6 +133,9 @@ struct OrderServices {
                 case .failure(let error):
                     completion(.failure(error))
                 case .success(let resp):
+                    Logs.writeLog(onDate: Helper.getCurrentDateAndTime(),
+                                  andDescription: "\(resp)"
+                    )
                     completion(.success(resp))
             }
         }
@@ -139,6 +160,9 @@ struct OrderServices {
                 case .failure(let error):
                     completion(.failure(error))
                 case .success(let resp):
+                    Logs.writeLog(onDate: Helper.getCurrentDateAndTime(),
+                                  andDescription: "\(resp)"
+                    )
                     completion(.success(resp))
             }
         }
